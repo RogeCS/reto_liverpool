@@ -1,9 +1,10 @@
 import React from "react";
-import { Button } from "@material-ui/core";
+import { Button } from "antd";
+import "antd/dist/antd.css";
 import "../assets/styles/containers/App.scss";
 
 function App() {
-  return <Button color="primary">Material-UI</Button>;
+  return <Button type="primary">Primary Button</Button>;
 }
 
 export default App;
