@@ -1,0 +1,15 @@
+.carouselItemInfo__container {
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+}
+.bullet {
+  display: list-item; /* This has to be "list-item"                                               */
+  list-style-type: disc; /* See https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type     */
+  list-style-position: inside;
+  justify-self: center;
+  align-self: center;
+}
+.carouselItemInfo__container--benefit {
+  white-space: initial;
+  margin: 10px 0px;
+}

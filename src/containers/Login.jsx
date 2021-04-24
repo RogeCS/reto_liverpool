@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import TextField from "@material-ui/core/TextField";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -11,8 +12,12 @@ const Login = () => {
 
   const handleChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
+    if (event.target.checked && true) {
+      console.log("Me siento activado");
+    } else {
+      console.log("Estoy desactivado");
+    }
   };
-
   return (
     <section className="login">
       <section className="login__banner">
@@ -23,35 +28,32 @@ const Login = () => {
           <span>Ingresa tus datos</span>
         </p>
         <form className="login__container--form" noValidate autoComplete="off">
-          <TextField
-            className="input"
-            id="outlined-basic"
-            label="Correo"
-            variant="outlined"
-          />
-          <TextField
-            className="input"
-            id="outlined-basic"
-            label="Celular"
-            variant="outlined"
-          />
+          <TextField id="outlined-basic1" label="Correo" variant="outlined" />
+          <TextField id="outlined-basic" label="Celular" variant="outlined" />
           <FormGroup row>
             <FormControlLabel
               control={
                 <Checkbox
+                  id="th"
                   checked={state.checked}
                   onChange={handleChange}
                   name="checked"
                 />
               }
-              label="¿Eres tarjeta habiente?"
+              label="¿Eres tarjetahabiente?"
             />
           </FormGroup>
           <button className="button">Entrar</button>
         </form>
         <section className="login__container--terms">
           <p>
-            <a>Política de privacidad</a> y <a>Términos y condiciones</a>
+            <Link to="/" className="a">
+              Política de privacidad
+            </Link>{" "}
+            y{" "}
+            <Link to="/" className="a">
+              Términos y condiciones
+            </Link>
           </p>
         </section>
       </section>

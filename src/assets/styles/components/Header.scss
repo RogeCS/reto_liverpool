@@ -1,14 +1,17 @@
 .header {
-  align-items: center;
   background: #e10098;
   color: white;
-  display: flex;
   height: 55px;
-  justify-content: center;
-  top: 0px;
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
-
+.header a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .header__img {
   height: 80%;
 }

@@ -1,0 +1,73 @@
+{
+  "initalState": {
+    "cards": [
+      {
+        "id": 1,
+        "title": "Tarjeta Liverpool",
+        "type": "Departamental",
+        "image": "https://micredito.liverpool.com.mx:9443/cdn/app/assets/seo/img/comparador/DILISA.png",
+        "subtitle": "Beneficios",
+        "benefits": [
+          {
+            "id": 11,
+            "ben": "Sin costo por apertura"
+          },
+          {
+            "id": 12,
+            "ben": "Sin costo por anualidad"
+          },
+          {
+            "id": 13,
+            "ben": "tarjetas adicionales sin costo"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Tarjeta de Liverpool",
+        "type": "visa",
+        "image": "https://micredito.liverpool.com.mx:9443/cdn/app/assets/seo/img/comparador/LPC.png",
+        "subtitle": "Beneficios",
+        "benefits": [
+          {
+            "id": 21,
+            "ben": "Sin costo por apertura"
+          },
+          {
+            "id": 22,
+            "ben": "Anualidad gratis el primer año y a partir de lsegundo año $399.00 + IVA"
+          },
+          {
+            "id": 23,
+            "ben": "Porgrama de puntos Rosas"
+          },
+          {
+            "id": 24,
+            "ben": "Aceptación internacional en millones de comercios"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Tarjeta Liverpool",
+        "type": "Universitaria",
+        "image": "https://micredito.liverpool.com.mx:9443/cdn/app/assets/seo/img/comparador/LIVERTU.png",
+        "subtitle": "Beneficios",
+        "benefits": [
+          {
+            "id": 31,
+            "ben": "Sin costo por apertura"
+          },
+          {
+            "id": 32,
+            "ben": "Sin costo por anualidad"
+          },
+          {
+            "id": 33,
+            "ben": "Dirigido para Universitarios de 18 a 23 años"
+          }
+        ]
+      }
+    ]
+  }
+}
