@@ -1,6 +1,2 @@
 **README**
-* prueba 1 
-
-
-* NO SE ROBEN NUESTRO TRABAJOOOOOOOOO
-* prueba dos. La del paco
+* paco no se baña*
