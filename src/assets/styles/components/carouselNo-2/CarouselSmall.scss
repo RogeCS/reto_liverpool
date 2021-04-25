@@ -1,0 +1,12 @@
+.carouselSmall {
+  overflow: scroll;
+  overflow-y: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.carouselSmall__container {
+  font-size: 0;
+  white-space: nowrap;
+  padding-bottom: 10px;
+}
