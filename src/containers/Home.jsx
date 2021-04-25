@@ -1,8 +1,13 @@
 import React from "react";
 import Categories from "../components/Categories.jsx";
+
 import Carousel from "../components/carouselNo-1/Carousel.jsx";
 import CarouselItem from "../components/carouselNo-1/CarouselItem.jsx";
 import CarouselItemInfo from "../components/CarouselNo-1/CarouselItemInfo.jsx";
+
+import CarouselSmall from "../components/carsouleNo-2/CarouselSmall.jsx";
+import CarouselItemSmall from "../components/carsouleNo-2/CarouselItemSmall.jsx";
+
 import useInitialState from "../hooks/useInitialState";
 import "../assets/styles/containers/Home.scss";
 
@@ -27,6 +32,14 @@ const Home = () => {
             </CarouselItem>
           ))}
         </Carousel>
+      </Categories>
+
+      <Categories title="Promos" subtitle="Conoce todas nuestras promociones">
+        <CarouselSmall>
+          {initialState.promos.map((item) => (
+            <CarouselItemSmall key={item.id} {...item} />
+          ))}
+        </CarouselSmall>
       </Categories>
     </div>
   );
