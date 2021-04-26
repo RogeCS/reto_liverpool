@@ -1,5 +1,7 @@
 import React from "react";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import { loginRequest } from "../actions/index";
 import TextField from "@material-ui/core/TextField";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -7,16 +9,29 @@ import FormGroup from "@material-ui/core/FormGroup";
 
 import "../assets/styles/containers/Login.scss";
 
-const Login = () => {
+const Login = (props) => {
   const [state, setState] = React.useState({ checked: false });
+  const [data, setValues] = React.useState({
+    email: "",
+    phoneNumber: "",
+  });
+
+  const handleInput = (event) => {
+    setValues({
+      ...data,
+      [event.target.name]: event.target.value,
+    });
+  };
 
   const handleChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
-    if (event.target.checked && true) {
-      console.log("Me siento activado");
-    } else {
-      console.log("Estoy desactivado");
-    }
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const form = { ...data, ...state };
+    props.loginRequest(form);
+    props.history.push("/promos");
   };
   return (
     <section className="login">
@@ -27,9 +42,26 @@ const Login = () => {
         <p className="login__container--division">
           <span>Ingresa tus datos</span>
         </p>
-        <form className="login__container--form" noValidate autoComplete="off">
-          <TextField id="outlined-basic1" label="Correo" variant="outlined" />
-          <TextField id="outlined-basic" label="Celular" variant="outlined" />
+        <form
+          className="login__container--form"
+          noValidate
+          autoComplete="off"
+          onSubmit={handleSubmit}
+        >
+          <TextField
+            id="outlined-basic1"
+            label="Correo"
+            variant="outlined"
+            name="email"
+            onChange={handleInput}
+          />
+          <TextField
+            id="outlined-basic"
+            label="Celular"
+            variant="outlined"
+            name="phoneNumber"
+            onChange={handleInput}
+          />
           <FormGroup row>
             <FormControlLabel
               control={
@@ -60,4 +92,9 @@ const Login = () => {
     </section>
   );
 };
-export default Login;
+
+const mapDispatchToProps = {
+  loginRequest,
+};
+
+export default connect(null, mapDispatchToProps)(Login);

@@ -1,42 +1,42 @@
 import React from "react";
+import { connect } from "react-redux";
 import Categories from "../components/Categories.jsx";
-
 import Carousel from "../components/carouselNo-1/Carousel.jsx";
 import CarouselItem from "../components/carouselNo-1/CarouselItem.jsx";
 import CarouselItemInfo from "../components/CarouselNo-1/CarouselItemInfo.jsx";
-
 import CarouselSmall from "../components/carsouleNo-2/CarouselSmall.jsx";
 import CarouselItemSmall from "../components/carsouleNo-2/CarouselItemSmall.jsx";
-
-import useInitialState from "../hooks/useInitialState";
 import "../assets/styles/containers/Home.scss";
 
-const API = "http://localhost:3000/initalState";
-
-const Home = () => {
-  const initialState = useInitialState(API);
-  return initialState.length === 0 ? (
-    <h1>Loading...</h1>
-  ) : (
+const Home = ({ cards, promos, user }) => {
+  const isCardOwner = () => {
+    if (Object.keys(user).length > 0) {
+      return user.checked;
+    }
+    return false;
+  };
+  return (
     <div className="Home">
-      <Categories
-        title="Tarjetas de Crédito"
-        subtitle="Conoce todas nuestras promociones"
-      >
-        <Carousel>
-          {initialState.cards.map((item1) => (
-            <CarouselItem key={item1.id} {...item1}>
-              {item1.benefits.map((item) => (
-                <CarouselItemInfo key={item.id} {...item} />
-              ))}
-            </CarouselItem>
-          ))}
-        </Carousel>
-      </Categories>
+      {!isCardOwner() && (
+        <Categories
+          title="Tarjetas de Crédito"
+          subtitle="Conoce todas nuestras promociones"
+        >
+          <Carousel>
+            {cards.map((item1) => (
+              <CarouselItem key={item1.id} {...item1}>
+                {item1.benefits.map((item) => (
+                  <CarouselItemInfo key={item.id} {...item} />
+                ))}
+              </CarouselItem>
+            ))}
+          </Carousel>
+        </Categories>
+      )}
 
       <Categories title="Promos" subtitle="Conoce todas nuestras promociones">
         <CarouselSmall>
-          {initialState.promos.map((item) => (
+          {promos.map((item) => (
             <CarouselItemSmall key={item.id} {...item} />
           ))}
         </CarouselSmall>
@@ -44,4 +44,13 @@ const Home = () => {
     </div>
   );
 };
-export default Home;
+
+const mapStateToProps = (state) => {
+  return {
+    cards: state.cards,
+    promos: state.promos,
+    user: state.user,
+  };
+};
+
+export default connect(mapStateToProps, null)(Home);
