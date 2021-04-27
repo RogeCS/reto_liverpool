@@ -6,6 +6,7 @@ import TextField from "@material-ui/core/TextField";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormGroup from "@material-ui/core/FormGroup";
+import { database } from "../firebase"
 
 import "../assets/styles/containers/Login.scss";
 
@@ -30,9 +31,18 @@ const Login = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = { ...data, ...state };
+    database.collection("users").add({
+      mail: form.email,
+      phone: form.phoneNumber,
+      hasCard: form.checked,
+    })
+    .then(() => {
+      alert('Gracias por dejarnos brindarte un mejor servicio 😁')
+    })
     props.loginRequest(form);
     props.history.push("/promos");
   };
+
   return (
     <section className="login">
       <section className="login__banner">
