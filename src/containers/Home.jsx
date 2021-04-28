@@ -4,7 +4,7 @@ import { database } from "../firebase";
 import Categories from "../components/Categories.jsx";
 import Carousel from "../components/carouselNo-1/Carousel.jsx";
 import CarouselItem from "../components/carouselNo-1/CarouselItem.jsx";
-import CarouselItemInfo from "../components/CarouselNo-1/CarouselItemInfo.jsx";
+import CarouselItemInfo from "../components/carouselNo-1/CarouselItemInfo.jsx";
 import CarouselSmall from "../components/carsouleNo-2/CarouselSmall.jsx";
 import CarouselItemSmall from "../components/carsouleNo-2/CarouselItemSmall.jsx";
 import "../assets/styles/containers/Home.scss";
