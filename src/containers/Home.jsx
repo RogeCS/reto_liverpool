@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { database } from "../firebase";
+import { database } from "../firebase.js";
 import Categories from "../components/Categories.jsx";
 import Carousel from "../components/carouselNo-1/Carousel.jsx";
 import CarouselItem from "../components/carouselNo-1/CarouselItem.jsx";
@@ -15,15 +15,13 @@ const Home = ({ cards, promos, user }) => {
       return user.checked;
     }
     return false;
-
-    const info = database.collection("Promociones_General");
-    console.log(info);
   };
+
   return (
     <div className="Home">
       <Categories
-        title="Exclusivas para nuestros tarjetahabientes"
-        subtitle="Conoce todas nuestras promociones más recientes"
+        title="Promociones"
+        subtitle="Conoce todas nuestras promociones"
       >
         <CarouselSmall>
           {promos.map((item) => (
@@ -31,11 +29,10 @@ const Home = ({ cards, promos, user }) => {
           ))}
         </CarouselSmall>
       </Categories>
-      <button>hola</button>
       {!isCardOwner() && (
         <Categories
           title="Tarjetas de Crédito"
-          subtitle="Conoce todas nuestras promociones"
+          subtitle="Conoce las tarjetas de crédito"
         >
           <Carousel>
             {cards.map((item1) => (
@@ -48,14 +45,6 @@ const Home = ({ cards, promos, user }) => {
           </Carousel>
         </Categories>
       )}
-
-      <Categories title="Zapaterias" subtitle="">
-        <CarouselSmall>
-          {promos.map((item) => (
-            <CarouselItemSmall key={item.id} {...item} />
-          ))}
-        </CarouselSmall>
-      </Categories>
     </div>
   );
 };
