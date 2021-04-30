@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { database } from "../firebase.js";
+import Banner from "../components/Banner.jsx";
 import Categories from "../components/Categories.jsx";
 import Carousel from "../components/carouselNo-1/Carousel.jsx";
 import CarouselItem from "../components/carouselNo-1/CarouselItem.jsx";
@@ -27,7 +28,6 @@ const Home = ({ cards, promos, user }) => {
       const items = [];
       querySnapshot.forEach((doc) => {
         items.push(doc.data());
-        console.log(doc.id);
       });
       setPromo(items);
       setLoading(false);
@@ -44,6 +44,7 @@ const Home = ({ cards, promos, user }) => {
 
   return (
     <div className="Home">
+      <Banner />
       {!isCardOwner() && (
         <Categories
           title="Tarjetas de Crédito"
@@ -70,7 +71,10 @@ const Home = ({ cards, promos, user }) => {
           )}
         </CarouselSmall>
       </Categories>
-      <Categories title="Electrónica" subtitle="conoce nuestra promoTEC">
+      <Categories
+        title="Electrónica"
+        subtitle="conoce nuestras promociones en tecnología"
+      >
         <CarouselSmall>
           {promo.map(
             (item) =>
