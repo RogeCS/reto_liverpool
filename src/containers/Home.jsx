@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { arrayOf, element } from "prop-types";
 import { database } from "../firebase.js";
+import KommunicateChat from "../chat.js";
 import BoloNotFound from "../components/BoloNotFound.jsx";
 import Banner from "../components/Banner.jsx";
 import Categories from "../components/Categories.jsx";
@@ -11,10 +12,6 @@ import CarouselItemInfo from "../components/carouselNo-1/CarouselItemInfo.jsx";
 import CarouselSmall from "../components/carsouleNo-2/CarouselSmall.jsx";
 import CarouselItemSmall from "../components/carsouleNo-2/CarouselItemSmall.jsx";
 import "../assets/styles/containers/Home.scss";
-<<<<<<< HEAD
-import KommunicateChat from '../chat.js';
-=======
->>>>>>> d4ab8505af32cf3ee685817da9d931651060fa3e
 
 const Home = ({ cards, promos, user }) => {
   const [promo, setPromo] = React.useState([]);
@@ -27,18 +24,6 @@ const Home = ({ cards, promos, user }) => {
     return false;
   };
 
-<<<<<<< HEAD
-  var array = ["Zapateria", "Linea_Blanca"];
-  var i;
-  for (i = 0; i < array.length; i++) {
-    database
-      .collection("Promociones_General/" + "Departamento" + "/" + array[i])
-      .get()
-      .then((subCollectionSnapshot) => {
-        subCollectionSnapshot.forEach((subDoc) => {
-          console.log(subDoc.data());
-        });
-=======
   const ref = database.collection("PromocionesGeneral");
   function getPromo() {
     setLoading(true);
@@ -46,7 +31,6 @@ const Home = ({ cards, promos, user }) => {
       const items = [];
       querySnapshot.forEach((doc) => {
         items.push(doc.data());
->>>>>>> d4ab8505af32cf3ee685817da9d931651060fa3e
       });
       setPromo(items);
       setLoading(false);
@@ -62,7 +46,6 @@ const Home = ({ cards, promos, user }) => {
   }
 
   return (
-    
     <div className="Home">
       <Banner />
       {!isCardOwner() && (
@@ -81,10 +64,7 @@ const Home = ({ cards, promos, user }) => {
           </Carousel>
         </Categories>
       )}
-<<<<<<< HEAD
 
-    <KommunicateChat></KommunicateChat>
-=======
       <Categories title="Muebles" subtitle="Conoce todos nuestros muebles">
         <CarouselSmall>
           {promo.map(
@@ -108,7 +88,7 @@ const Home = ({ cards, promos, user }) => {
           )}
         </CarouselSmall>
       </Categories>
->>>>>>> d4ab8505af32cf3ee685817da9d931651060fa3e
+      <KommunicateChat></KommunicateChat>
     </div>
   );
 };
