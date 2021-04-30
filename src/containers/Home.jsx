@@ -8,9 +8,11 @@ import CarouselItemInfo from "../components/carouselNo-1/CarouselItemInfo.jsx";
 import CarouselSmall from "../components/carsouleNo-2/CarouselSmall.jsx";
 import CarouselItemSmall from "../components/carsouleNo-2/CarouselItemSmall.jsx";
 import "../assets/styles/containers/Home.scss";
-import { arrayOf, element } from "prop-types";
 
 const Home = ({ cards, promos, user }) => {
+  const [promo, setPromo] = React.useState([]);
+  const [loading, setLoading] = React.useState(false);
+
   const isCardOwner = () => {
     if (Object.keys(user).length > 0) {
       return user.checked;
@@ -18,40 +20,30 @@ const Home = ({ cards, promos, user }) => {
     return false;
   };
 
-  //database.collection(firstCollections + '/' + docId + '/' + subCollection).get()
-  /*database.collection("Promociones_General")
-  .doc("Departamento").collection("Zapateria").get()
-  .then(querySnapshot => {
-      querySnapshot.forEach(doc => {
-          console.log(doc.id, " => ", doc.data());
+  const ref = database.collection("PromocionesGeneral");
+  function getPromo() {
+    setLoading(true);
+    ref.onSnapshot((querySnapshot) => {
+      const items = [];
+      querySnapshot.forEach((doc) => {
+        items.push(doc.data());
+        console.log(doc.id);
       });
-  });
-  */
-  var array = ["Zapateria", "Linea_Blanca"];
-  var i;
-  for (i = 0; i < array.length; i++) {
-    database
-      .collection("Promociones_General/" + "Departamento" + "/" + array[i])
-      .get()
-      .then((subCollectionSnapshot) => {
-        subCollectionSnapshot.forEach((subDoc) => {
-          console.log(subDoc.data());
-        });
-      });
+      setPromo(items);
+      setLoading(false);
+    });
+  }
+
+  React.useEffect(() => {
+    getPromo();
+  }, []);
+
+  if (loading) {
+    return <h1>Loading...</h1>;
   }
 
   return (
     <div className="Home">
-      <Categories
-        title="Promociones"
-        subtitle="Conoce todas nuestras promociones"
-      >
-        <CarouselSmall>
-          {promos.map((item) => (
-            <CarouselItemSmall key={item.id} {...item} />
-          ))}
-        </CarouselSmall>
-      </Categories>
       {!isCardOwner() && (
         <Categories
           title="Tarjetas de Crédito"
@@ -68,6 +60,26 @@ const Home = ({ cards, promos, user }) => {
           </Carousel>
         </Categories>
       )}
+      <Categories title="Muebles" subtitle="Conoce todos nuestros muebles">
+        <CarouselSmall>
+          {promo.map(
+            (item) =>
+              item.Departamento == "muebles" && (
+                <CarouselItemSmall key={item.id} {...item} />
+              )
+          )}
+        </CarouselSmall>
+      </Categories>
+      <Categories title="Electrónica" subtitle="conoce nuestra promoTEC">
+        <CarouselSmall>
+          {promo.map(
+            (item) =>
+              item.Departamento == "electronica" && (
+                <CarouselItemSmall key={item.id} {...item} />
+              )
+          )}
+        </CarouselSmall>
+      </Categories>
     </div>
   );
 };

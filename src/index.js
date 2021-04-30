@@ -26,14 +26,14 @@ const initialState = {
         },
         {
           id: 13,
-          ben: "tarjetas adicionales sin costo",
+          ben: "Tarjetas adicionales sin costo",
         },
       ],
     },
     {
       id: 2,
       title: "Tarjeta de Liverpool",
-      type: "visa",
+      type: "VISA",
       image:
         "https://micredito.liverpool.com.mx:9443/cdn/app/assets/seo/img/comparador/LPC.png",
       subtitle: "Beneficios",
