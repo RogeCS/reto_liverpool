@@ -8,8 +8,7 @@ import CarouselItemInfo from "../components/carouselNo-1/CarouselItemInfo.jsx";
 import CarouselSmall from "../components/carsouleNo-2/CarouselSmall.jsx";
 import CarouselItemSmall from "../components/carsouleNo-2/CarouselItemSmall.jsx";
 import "../assets/styles/containers/Home.scss";
-import { database } from "../firebase.js";
-import { arrayOf, element } from "prop-types";
+import KommunicateChat from '../chat.js';
 
 const Home = ({ cards, promos, user }) => {
   const isCardOwner = () => {
@@ -42,6 +41,7 @@ const Home = ({ cards, promos, user }) => {
   }
 
   return (
+    
     <div className="Home">
       <Categories
         title="Promociones"
@@ -69,6 +69,9 @@ const Home = ({ cards, promos, user }) => {
           </Carousel>
         </Categories>
       )}
+
+<KommunicateChat></KommunicateChat>
+  
     </div>
   );
 };

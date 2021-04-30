@@ -37,7 +37,7 @@ const Login = (props) => {
       hasCard: form.checked,
     })
     .then(() => {
-      alert('Gracias por dejarnos brindarte un mejor servicio 😁')
+      alert('Un asesor pronto se pondrá en contacto contigo 😁')
     })
     props.loginRequest(form);
     props.history.push("/promos");
