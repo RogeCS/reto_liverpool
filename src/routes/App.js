@@ -8,7 +8,7 @@ import "../assets/styles/App.scss";
 
 const App = () => (
   <BrowserRouter>
-    <Layout>
+    <Layout> 
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
