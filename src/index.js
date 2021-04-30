@@ -89,7 +89,7 @@ const initialState = {
       title: "Seguro de Autos",
       subtitle: "Beneficios",
       price: "",
-      url: "",
+      url: "https://miseguro.liverpool.com.mx/seguro-de-auto",
       image:
         "https://gossipvehiculo.com/wp-content/uploads/2020/06/c15f8ec2-polestar-2-vs-tesla-model-3-visual-comp-4.jpg",
       b1: "- Sin recargo por pagar a meses sin intereses.",
@@ -103,7 +103,7 @@ const initialState = {
       title: "Seguro de Celular",
       subtitle: "Beneficios",
       price: "",
-      url: "",
+      url: "https://miseguro.liverpool.com.mx/proteccion-celular",
       image:
         "https://www.muycomputer.com/wp-content/uploads/2018/07/smartphone.jpg",
       b1: "- Asistencia Jurídica en caso de robo",
@@ -117,7 +117,7 @@ const initialState = {
       title: "PIF",
       subtitle: "Beneficios",
       price: "desde $99",
-      url: "",
+      url: "https://miseguro.liverpool.com.mx/proteccion-integral-familiar",
       image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Family_Portrait.jpg/1200px-Family_Portrait.jpg",
 
