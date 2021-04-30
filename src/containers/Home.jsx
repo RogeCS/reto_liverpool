@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import { arrayOf, element } from "prop-types";
 import { database } from "../firebase.js";
 import KommunicateChat from "../chat.js";
 import BoloNotFound from "../components/BoloNotFound.jsx";
@@ -9,14 +8,18 @@ import Categories from "../components/Categories.jsx";
 import Carousel from "../components/carouselNo-1/Carousel.jsx";
 import CarouselItem from "../components/carouselNo-1/CarouselItem.jsx";
 import CarouselItemInfo from "../components/carouselNo-1/CarouselItemInfo.jsx";
-import CarouselSmall from "../components/carsouleNo-2/CarouselSmall.jsx";
-import CarouselItemSmall from "../components/carsouleNo-2/CarouselItemSmall.jsx";
+import CarouselSmall from "../components/carouselNo-2/CarouselSmall.jsx";
+import CarouselItemSmall from "../components/carouselNo-2/CarouselItemSmall.jsx";
+import CarouselItemMed from "../components/carouselNo-3/CarouselItemMed.jsx";
+import arrowIcon from "../assets/static/arrowIconWhite.png";
 import "../assets/styles/containers/Home.scss";
 
-const Home = ({ cards }) => {
+const Home = ({ cards, seguros }) => {
   const [promo, setPromo] = React.useState([]);
   const [dept, setDept] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
+  const [showText, setShowText] = React.useState(false);
+  const onClick = () => (showText ? setShowText(false) : setShowText(true));
 
   const ref = database.collection("PromocionesGeneral");
   let unique = [];
@@ -66,17 +69,40 @@ const Home = ({ cards }) => {
           </CarouselSmall>
         </Categories>
       ))}
-      <Categories title="Tarjetas de Crédito" subtitle="">
-        <Carousel>
-          {cards.map((item1) => (
-            <CarouselItem key={item1.id} {...item1}>
-              {item1.benefits.map((item) => (
-                <CarouselItemInfo key={item.id} {...item} />
-              ))}
-            </CarouselItem>
-          ))}
-        </Carousel>
-      </Categories>
+      <section className="card">
+        <h1 className="card--title">¡Descarga la app!</h1>
+        <button className="card--button">
+          <img className="card--button-img" src={arrowIcon} />
+        </button>
+      </section>
+      <section className="card">
+        <h1 className="card--title">¿Eres tarjeta habiente?</h1>
+        <button onClick={onClick} className="card--button">
+          <img className="card--button-img" src={arrowIcon} />
+        </button>
+      </section>
+      {!showText && (
+        <Categories title="Tarjetas de Crédito" subtitle="">
+          <Carousel>
+            {cards.map((item1) => (
+              <CarouselItem key={item1.id} {...item1}>
+                {item1.benefits.map((item) => (
+                  <CarouselItemInfo key={item.id} {...item} />
+                ))}
+              </CarouselItem>
+            ))}
+          </Carousel>
+        </Categories>
+      )}
+      {showText && (
+        <Categories title="Seguros" subtitle="Conoce nuestros seguros">
+          <Carousel>
+            {seguros.map((item) => (
+              <CarouselItemMed key={item.id} {...item} />
+            ))}
+          </Carousel>
+        </Categories>
+      )}
       <KommunicateChat></KommunicateChat>
     </div>
   );
@@ -85,7 +111,7 @@ const Home = ({ cards }) => {
 const mapStateToProps = (state) => {
   return {
     cards: state.cards,
-    promos: state.promos,
+    seguros: state.seguros,
     user: state.user,
   };
 };

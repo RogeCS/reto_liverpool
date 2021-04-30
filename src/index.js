@@ -83,6 +83,23 @@ const initialState = {
       ],
     },
   ],
+  seguros: [
+    {
+      id: 41,
+      title: "Seguro tal",
+      subtitle: "Beneficios",
+      price: "$4047",
+      url: "",
+      image:
+        "https://micredito.liverpool.com.mx:9443/cdn/app/assets/seo/img/comparador/LIVERTU.png",
+
+      b1: "Ben 1",
+      b2: "Ben 2",
+      b3: "Ben 3",
+      b4: "Ben 4",
+      b5: "Ben 5",
+    },
+  ],
 };
 
 const store = createStore(reducer, initialState);
