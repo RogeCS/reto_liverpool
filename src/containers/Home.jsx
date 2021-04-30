@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { arrayOf, element } from "prop-types";
 import { database } from "../firebase.js";
 import Categories from "../components/Categories.jsx";
 import Carousel from "../components/carouselNo-1/Carousel.jsx";
@@ -7,9 +8,8 @@ import CarouselItem from "../components/carouselNo-1/CarouselItem.jsx";
 import CarouselItemInfo from "../components/carouselNo-1/CarouselItemInfo.jsx";
 import CarouselSmall from "../components/carsouleNo-2/CarouselSmall.jsx";
 import CarouselItemSmall from "../components/carsouleNo-2/CarouselItemSmall.jsx";
+import boloIcon from "../assets/static/Bolo.png";
 import "../assets/styles/containers/Home.scss";
-import { database } from "../firebase.js";
-import { arrayOf, element } from "prop-types";
 
 const Home = ({ cards, promos, user }) => {
   const isCardOwner = () => {
@@ -19,40 +19,14 @@ const Home = ({ cards, promos, user }) => {
     return false;
   };
 
-  //database.collection(firstCollections + '/' + docId + '/' + subCollection).get()
-  /*database.collection("Promociones_General")
-  .doc("Departamento").collection("Zapateria").get()
-  .then(querySnapshot => {
-      querySnapshot.forEach(doc => {
-          console.log(doc.id, " => ", doc.data());
-      });
-  });
-  */
-  var array = ["Zapateria", "Linea_Blanca"];
-  var i;
-  for (i = 0; i < array.length; i++) {
-    database
-      .collection("Promociones_General/" + "Departamento" + "/" + array[i])
-      .get()
-      .then((subCollectionSnapshot) => {
-        subCollectionSnapshot.forEach((subDoc) => {
-          console.log(subDoc.data());
-        });
-      });
-  }
-
   return (
     <div className="Home">
-      <Categories
-        title="Promociones"
-        subtitle="Conoce todas nuestras promociones"
-      >
+      <Categories title="" subtitle="">
         <CarouselSmall>
-          {promos.map((item) => (
-            <CarouselItemSmall key={item.id} {...item} />
-          ))}
+          <CarouselItemSmall />
         </CarouselSmall>
       </Categories>
+
       {!isCardOwner() && (
         <Categories
           title="Tarjetas de Crédito"
@@ -69,6 +43,17 @@ const Home = ({ cards, promos, user }) => {
           </Carousel>
         </Categories>
       )}
+
+      <section className="chatbot__container">
+        <div className="chatbot__container--background">
+          <div className="chatbot__container--border">
+            <div className="chatbot__container--img bounce-1">
+              <img src={boloIcon} alt="Chatbot" />
+            </div>
+          </div>
+        </div>
+        <div className="pointer"></div>
+      </section>
     </div>
   );
 };

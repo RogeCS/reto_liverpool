@@ -1,3 +1,67 @@
 .h1 {
   color: black;
 }
+.chatbot__container {
+  position: sticky;
+  display: relative;
+  float: right;
+  bottom: 10px;
+  margin: 0px 5px 5px 0px;
+}
+.chatbot__container--background {
+  background: #f7aee0;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chatbot__container--border {
+  background: #da0496;
+  border-radius: 50%;
+  width: 90%;
+  height: 90%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chatbot__container--img {
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+.bounce-1 {
+  animation-name: bounce-1;
+  animation-timing-function: linear;
+}
+.chatbot__container--img img {
+  display: block;
+  height: 84px;
+}
+
+.pointer {
+  position: absolute;
+  bottom: 0px;
+  height: 20px;
+  width: 20px;
+  background: #f7aee0;
+  transform: rotate(10deg);
+  border-radius: 0 0 5px 0;
+  right: 10px;
+  z-index: -1;
+}
+
+@keyframes bounce-1 {
+  0% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
