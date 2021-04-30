@@ -11,8 +11,6 @@ const App = () => (
   <BrowserRouter>
     <Layout>
       <Switch>
-        <Route exact path="/reto_liverpool" component={Home} />
-        <Route exact path="/login" component={Login} />
         <Route component={Home} />
       </Switch>
     </Layout>
