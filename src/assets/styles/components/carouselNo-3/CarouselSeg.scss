@@ -1,0 +1,13 @@
+.carousel {
+    overflow: scroll;
+    overflow-y: hidden;
+    width: 100%;
+    position: relative;
+  }
+  
+  .carousel__container {
+    font-size: 0;
+    white-space: nowrap;
+    padding-bottom: 10px;
+  }
+  

@@ -83,6 +83,18 @@ const initialState = {
       ],
     },
   ],
+  seguros: [
+    {
+      id: 1,
+      title: "Contrata tu seguro de vida",
+      url: "www.google.com"
+    },
+    {
+      id: 2,
+      title: "Seguro de auto",
+      url: "www.google.com"
+    }
+  ],
 };
 
 const store = createStore(reducer, initialState);

@@ -11,9 +11,11 @@ import CarouselItem from "../components/carouselNo-1/CarouselItem.jsx";
 import CarouselItemInfo from "../components/carouselNo-1/CarouselItemInfo.jsx";
 import CarouselSmall from "../components/carsouleNo-2/CarouselSmall.jsx";
 import CarouselItemSmall from "../components/carsouleNo-2/CarouselItemSmall.jsx";
+import CarouselSeg from "../components/carouselNo-3/CarouselSeg.jsx"
+import CarouselItemSeg from "../components/carouselNo-3/CarouselItemSeg.jsx"
 import "../assets/styles/containers/Home.scss";
 
-const Home = ({ cards, promos, user }) => {
+const Home = ({ cards, seguros, promos, user }) => {
   const [promo, setPromo] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
 
@@ -64,6 +66,15 @@ const Home = ({ cards, promos, user }) => {
           </Carousel>
         </Categories>
       )}
+      <Categories title="Seguros" subtitle="Conoce nuestros seguros">
+      <Carousel>
+          {seguros.map((item1) => (
+                <CarouselItem 
+                  key={item1.id} {...item1}>
+                </CarouselItem>
+              ))}
+        </Carousel>
+      </Categories>
 
       <Categories title="Muebles" subtitle="Conoce todos nuestros muebles">
         <CarouselSmall>
@@ -98,6 +109,7 @@ const mapStateToProps = (state) => {
     cards: state.cards,
     promos: state.promos,
     user: state.user,
+    seguros: state.seguros
   };
 };
 
