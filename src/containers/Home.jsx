@@ -18,15 +18,6 @@ const Home = ({ cards, promos, user }) => {
     return false;
   };
 
-  //database.collection(firstCollections + '/' + docId + '/' + subCollection).get()
-  /*database.collection("Promociones_General")
-  .doc("Departamento").collection("Zapateria").get()
-  .then(querySnapshot => {
-      querySnapshot.forEach(doc => {
-          console.log(doc.id, " => ", doc.data());
-      });
-  });
-  */
   var array = ["Zapateria", "Linea_Blanca"];
   var i;
   for (i = 0; i < array.length; i++) {
