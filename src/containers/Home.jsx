@@ -71,9 +71,11 @@ const Home = ({ cards, seguros }) => {
       ))}
       <section className="card">
         <h1 className="card--title">¡Descarga la app!</h1>
-        <button className="card--button">
-          <img className="card--button-img" src={arrowIcon} />
-        </button>
+        <a href="https://liverpool.onelink.me/5GIo?pid=QR_code&c=qr_homepage_descarga_cupon-5&af_dp=shopapp%3A%2F%2F&af_web_dp=https%3A%2F%2Fwww.liverpool.com.mx%2Ftienda%2Fhome&af_qr=true">
+          <button className="card--button">
+            <img className="card--button-img" src={arrowIcon} />
+          </button>
+        </a>
       </section>
       <section className="card">
         <h1 className="card--title">¿Eres tarjeta habiente?</h1>

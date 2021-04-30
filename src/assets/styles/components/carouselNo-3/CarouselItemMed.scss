@@ -6,29 +6,38 @@
   position: relative;
   display: inline-block;
   width: 260px;
-  height: 500px;
+  height: 540px;
   margin: 0px 10px;
   font-size: 1.4rem;
 }
 
 .carouselMed-item__container {
   display: grid;
-  margin: 0px 10px;
+  margin: 0px 0px;
+}
+
+.image-container {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
 }
 
 .carouselMed-item__img {
-  width: 200px;
-  margin-left: 20px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .carouselMed-item__info--name {
+  margin-top: 10px;
   font-size: 2rem;
   margin-bottom: 5px;
+  margin-left: 10px;
 }
 
 .carouselMed-item__info--type {
   font-size: 1.5rem;
-  margin-left: 4px;
+  margin-left: 15px;
 }
 
 .carouselMed-item__container h3 {
@@ -47,8 +56,8 @@ hr {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: center;
-  margin: 5px 0px;
+  margin: 5px 10px;
+  white-space: initial;
 }
 
 .carouselMed-item__benefits p {

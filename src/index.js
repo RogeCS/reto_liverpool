@@ -86,18 +86,47 @@ const initialState = {
   seguros: [
     {
       id: 41,
-      title: "Seguro tal",
+      title: "Seguro de Autos",
       subtitle: "Beneficios",
-      price: "$4047",
+      price: "",
       url: "",
       image:
-        "https://micredito.liverpool.com.mx:9443/cdn/app/assets/seo/img/comparador/LIVERTU.png",
+        "https://gossipvehiculo.com/wp-content/uploads/2020/06/c15f8ec2-polestar-2-vs-tesla-model-3-visual-comp-4.jpg",
+      b1: "- Sin recargo por pagar a meses sin intereses.",
+      b2: "- Sin recargo por financiamiento.",
+      b3: "- Tu póliza se renueva automáticamente.",
+      b4: "- Contamos con renovación automática.",
+      b5: "- Atención en todas las tiendas Liverpool",
+    },
+    {
+      id: 42,
+      title: "Seguro de Celular",
+      subtitle: "Beneficios",
+      price: "",
+      url: "",
+      image:
+        "https://www.muycomputer.com/wp-content/uploads/2018/07/smartphone.jpg",
+      b1: "- Asistencia Jurídica en caso de robo",
+      b2: "- Descarga Eléctrica",
+      b3: "- Daño Total Accidental",
+      b4: "- Robo Total",
+      b5: "- Daño Total por Agua",
+    },
+    {
+      id: 43,
+      title: "PIF",
+      subtitle: "Beneficios",
+      price: "desde $99",
+      url: "",
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Family_Portrait.jpg/1200px-Family_Portrait.jpg",
 
-      b1: "Ben 1",
-      b2: "Ben 2",
-      b3: "Ben 3",
-      b4: "Ben 4",
-      b5: "Ben 5",
+      b1: "- Seguro de vida",
+      b2: "- Servicios de asistencia",
+      b3: "- Privilegios PIF que otorgan descuentos y precios preferenciales",
+      b4:
+        "- Garantía PIF que extiende por un año adicional la garantía de tus artículos",
+      b5: "",
     },
   ],
 };

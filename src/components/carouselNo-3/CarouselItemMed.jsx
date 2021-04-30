@@ -16,7 +16,9 @@ const CarouselItemMed = ({
   <div className="carouselMed-item">
     <article className="carouselMed-item__container">
       <section className="carouselMed-item__info">
-        <img className="carouselMed-item__img" src={image} alt={title} />
+        <div className="image-container">
+          <img className="carouselMed-item__img" src={image} alt={title} />
+        </div>
         <p className="carouselMed-item__info--name">{title}</p>
         <p className="carouselMed-item__info--type">{price}</p>
       </section>
