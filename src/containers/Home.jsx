@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { arrayOf, element } from "prop-types";
 import { database } from "../firebase.js";
 import Banner from "../components/Banner.jsx";
 import Categories from "../components/Categories.jsx";
@@ -8,6 +9,7 @@ import CarouselItem from "../components/carouselNo-1/CarouselItem.jsx";
 import CarouselItemInfo from "../components/carouselNo-1/CarouselItemInfo.jsx";
 import CarouselSmall from "../components/carsouleNo-2/CarouselSmall.jsx";
 import CarouselItemSmall from "../components/carsouleNo-2/CarouselItemSmall.jsx";
+import boloIcon from "../assets/static/Bolo.png";
 import "../assets/styles/containers/Home.scss";
 
 const Home = ({ cards, promos, user }) => {
@@ -44,7 +46,7 @@ const Home = ({ cards, promos, user }) => {
 
   return (
     <div className="Home">
-      <Banner />
+      <Banner/>
       {!isCardOwner() && (
         <Categories
           title="Tarjetas de Crédito"
@@ -84,6 +86,17 @@ const Home = ({ cards, promos, user }) => {
           )}
         </CarouselSmall>
       </Categories>
+
+      <section className="chatbot__container">
+        <div className="chatbot__container--background">
+          <div className="chatbot__container--border">
+            <div className="chatbot__container--img bounce-1">
+              <img src={boloIcon} alt="Chatbot" />
+            </div>
+          </div>
+        </div>
+        <div className="pointer"></div>
+      </section>
     </div>
   );
 };
