@@ -1,15 +1,12 @@
 .banner__container {
-  height: 255px;
+  height: 205px;
   width: 100%;
   background: #f491d4;
 }
 
 .banner__container--img {
-  background: url(https://static.promodescuentos.com/pepperpdimages/threads/thread_full_screen/default/603337_1.jpg);
+  background: url(https://www.unionjalisco.mx/sites/default/files/styles/galeria/public/field/image/94884337_10158119968701217_7601779526200197120_o.png?itok=1RLhCGN-);
   background-size: cover;
-  width: calc(100% + 5px);
-  height: 250px;
-  position: relative;
-  left: -5px;
-  float: left;
+  width: 100vw;
+  height: 200px;
 }

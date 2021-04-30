@@ -13,26 +13,27 @@ import CarouselSmall from "../components/carsouleNo-2/CarouselSmall.jsx";
 import CarouselItemSmall from "../components/carsouleNo-2/CarouselItemSmall.jsx";
 import "../assets/styles/containers/Home.scss";
 
-const Home = ({ cards, promos, user }) => {
+const Home = ({ cards }) => {
   const [promo, setPromo] = React.useState([]);
+  const [dept, setDept] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
 
-  const isCardOwner = () => {
-    if (Object.keys(user).length > 0) {
-      return user.checked;
-    }
-    return false;
-  };
-
   const ref = database.collection("PromocionesGeneral");
+  let unique = [];
   function getPromo() {
     setLoading(true);
     ref.onSnapshot((querySnapshot) => {
       const items = [];
+      const departments = [];
       querySnapshot.forEach((doc) => {
         items.push(doc.data());
       });
       setPromo(items);
+      items.forEach((item) => {
+        departments.push(item.Departamento);
+      });
+      unique = [...new Set(departments)];
+      setDept(unique);
       setLoading(false);
     });
   }
@@ -41,6 +42,7 @@ const Home = ({ cards, promos, user }) => {
     getPromo();
   }, []);
 
+  console.log(unique);
   if (loading) {
     return <BoloNotFound />;
   }
@@ -48,45 +50,32 @@ const Home = ({ cards, promos, user }) => {
   return (
     <div className="Home">
       <Banner />
-      {!isCardOwner() && (
+      {dept.map((dep) => (
         <Categories
-          title="Tarjetas de Crédito"
-          subtitle="Conoce las tarjetas de crédito"
+          key={dep}
+          title={dep.replace(/_/g, " ")}
+          subtitle={dep.replace(/_/g, " ")}
         >
-          <Carousel>
-            {cards.map((item1) => (
-              <CarouselItem key={item1.id} {...item1}>
-                {item1.benefits.map((item) => (
-                  <CarouselItemInfo key={item.id} {...item} />
-                ))}
-              </CarouselItem>
-            ))}
-          </Carousel>
+          <CarouselSmall>
+            {promo.map(
+              (item) =>
+                item.Departamento == dep && (
+                  <CarouselItemSmall key={item.id} {...item} />
+                )
+            )}
+          </CarouselSmall>
         </Categories>
-      )}
-
-      <Categories title="Muebles" subtitle="Conoce todos nuestros muebles">
-        <CarouselSmall>
-          {promo.map(
-            (item) =>
-              item.Departamento == "muebles" && (
-                <CarouselItemSmall key={item.id} {...item} />
-              )
-          )}
-        </CarouselSmall>
-      </Categories>
-      <Categories
-        title="Electrónica"
-        subtitle="conoce nuestras promociones en tecnología"
-      >
-        <CarouselSmall>
-          {promo.map(
-            (item) =>
-              item.Departamento == "electronica" && (
-                <CarouselItemSmall key={item.id} {...item} />
-              )
-          )}
-        </CarouselSmall>
+      ))}
+      <Categories title="Tarjetas de Crédito" subtitle="">
+        <Carousel>
+          {cards.map((item1) => (
+            <CarouselItem key={item1.id} {...item1}>
+              {item1.benefits.map((item) => (
+                <CarouselItemInfo key={item.id} {...item} />
+              ))}
+            </CarouselItem>
+          ))}
+        </Carousel>
       </Categories>
       <KommunicateChat></KommunicateChat>
     </div>
