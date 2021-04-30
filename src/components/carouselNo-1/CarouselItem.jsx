@@ -1,7 +1,7 @@
 import React from "react";
 import "../../assets/styles/components/carouselNo-1/CarouselItem.scss";
 
-const CarouselItem = ({ children, image, title, type, subtitle }) => (
+const CarouselItem = ({ children, image, title, type, subtitle, url }) => (
   <div className="carousel-item">
     <article className="carousel-item__container">
       <section className="carousel-item__info">
@@ -14,7 +14,9 @@ const CarouselItem = ({ children, image, title, type, subtitle }) => (
         <h3>{subtitle}</h3>
         {children}
       </section>
-      <button className="carousel-item__button">Solicitar</button>
+      <a href={url}>
+        <button className="carousel-item__button">Solicitar</button>
+      </a>
     </article>
   </div>
 );

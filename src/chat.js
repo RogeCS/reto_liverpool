@@ -8,6 +8,10 @@ class KommunicateChat extends Component {
   componentDidMount() {
     (function (d, m) {
       var kommunicateSettings = {
+        onInit: function () {
+          var css = ""; // Replace <YOUR_CSS_CODE_HERE> with the CSS you want to override.
+          Kommunicate.customizeWidgetCss(css);
+        },
         appId: "3fc937fa9bc8c8b1cf7beb7b54dd71803",
         popupWidget: true,
         automaticChatOpenOnNavigation: true,

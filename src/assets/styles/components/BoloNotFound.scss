@@ -1,13 +1,13 @@
 .chatbot__container {
   display: flex;
-  align-self: center;
-  bottom: 10px;
-  margin: 0px 5px 5px 0px;
+  align-content: center;
+  justify-content: center;
+  margin: 50px 0;
 }
 .chatbot__container--background {
   background: #f7aee0;
-  height: 80px;
-  width: 80px;
+  height: 200px;
+  width: 200px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -35,17 +35,17 @@
 }
 .chatbot__container--img img {
   display: block;
-  height: 84px;
+  width: 100%;
 }
 
 @keyframes bounce-1 {
   0% {
-    transform: translateY(10px);
-  }
-  50% {
     transform: translateY(15px);
   }
+  50% {
+    transform: translateY(20px);
+  }
   100% {
-    transform: translateY(10px);
+    transform: translateY(15px);
   }
 }
