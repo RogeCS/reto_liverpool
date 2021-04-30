@@ -8,7 +8,6 @@ import CarouselItemInfo from "../components/carouselNo-1/CarouselItemInfo.jsx";
 import CarouselSmall from "../components/carsouleNo-2/CarouselSmall.jsx";
 import CarouselItemSmall from "../components/carsouleNo-2/CarouselItemSmall.jsx";
 import "../assets/styles/containers/Home.scss";
-import { database } from "../firebase.js";
 import { arrayOf, element } from "prop-types";
 
 const Home = ({ cards, promos, user }) => {
