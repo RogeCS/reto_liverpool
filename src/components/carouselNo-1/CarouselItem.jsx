@@ -14,7 +14,7 @@ const CarouselItem = ({ children, image, title, type, subtitle }) => (
         <h3>{subtitle}</h3>
         {children}
       </section>
-      <button className="carousel-item__button">solicitar</button>
+      <button className="carousel-item__button">Solicitar</button>
     </article>
   </div>
 );

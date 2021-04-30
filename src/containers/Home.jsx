@@ -1,6 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
+import { arrayOf, element } from "prop-types";
 import { database } from "../firebase.js";
+import BoloNotFound from "../components/BoloNotFound.jsx";
+import Banner from "../components/Banner.jsx";
 import Categories from "../components/Categories.jsx";
 import Carousel from "../components/carouselNo-1/Carousel.jsx";
 import CarouselItem from "../components/carouselNo-1/CarouselItem.jsx";
@@ -8,9 +11,15 @@ import CarouselItemInfo from "../components/carouselNo-1/CarouselItemInfo.jsx";
 import CarouselSmall from "../components/carsouleNo-2/CarouselSmall.jsx";
 import CarouselItemSmall from "../components/carsouleNo-2/CarouselItemSmall.jsx";
 import "../assets/styles/containers/Home.scss";
+<<<<<<< HEAD
 import KommunicateChat from '../chat.js';
+=======
+>>>>>>> d4ab8505af32cf3ee685817da9d931651060fa3e
 
 const Home = ({ cards, promos, user }) => {
+  const [promo, setPromo] = React.useState([]);
+  const [loading, setLoading] = React.useState(false);
+
   const isCardOwner = () => {
     if (Object.keys(user).length > 0) {
       return user.checked;
@@ -18,6 +27,7 @@ const Home = ({ cards, promos, user }) => {
     return false;
   };
 
+<<<<<<< HEAD
   var array = ["Zapateria", "Linea_Blanca"];
   var i;
   for (i = 0; i < array.length; i++) {
@@ -28,22 +38,33 @@ const Home = ({ cards, promos, user }) => {
         subCollectionSnapshot.forEach((subDoc) => {
           console.log(subDoc.data());
         });
+=======
+  const ref = database.collection("PromocionesGeneral");
+  function getPromo() {
+    setLoading(true);
+    ref.onSnapshot((querySnapshot) => {
+      const items = [];
+      querySnapshot.forEach((doc) => {
+        items.push(doc.data());
+>>>>>>> d4ab8505af32cf3ee685817da9d931651060fa3e
       });
+      setPromo(items);
+      setLoading(false);
+    });
+  }
+
+  React.useEffect(() => {
+    getPromo();
+  }, []);
+
+  if (loading) {
+    return <BoloNotFound />;
   }
 
   return (
     
     <div className="Home">
-      <Categories
-        title="Promociones"
-        subtitle="Conoce todas nuestras promociones"
-      >
-        <CarouselSmall>
-          {promos.map((item) => (
-            <CarouselItemSmall key={item.id} {...item} />
-          ))}
-        </CarouselSmall>
-      </Categories>
+      <Banner />
       {!isCardOwner() && (
         <Categories
           title="Tarjetas de Crédito"
@@ -60,8 +81,34 @@ const Home = ({ cards, promos, user }) => {
           </Carousel>
         </Categories>
       )}
+<<<<<<< HEAD
 
     <KommunicateChat></KommunicateChat>
+=======
+      <Categories title="Muebles" subtitle="Conoce todos nuestros muebles">
+        <CarouselSmall>
+          {promo.map(
+            (item) =>
+              item.Departamento == "muebles" && (
+                <CarouselItemSmall key={item.id} {...item} />
+              )
+          )}
+        </CarouselSmall>
+      </Categories>
+      <Categories
+        title="Electrónica"
+        subtitle="conoce nuestras promociones en tecnología"
+      >
+        <CarouselSmall>
+          {promo.map(
+            (item) =>
+              item.Departamento == "electronica" && (
+                <CarouselItemSmall key={item.id} {...item} />
+              )
+          )}
+        </CarouselSmall>
+      </Categories>
+>>>>>>> d4ab8505af32cf3ee685817da9d931651060fa3e
     </div>
   );
 };

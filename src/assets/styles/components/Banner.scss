@@ -1,0 +1,15 @@
+.banner__container {
+  height: 255px;
+  width: 100%;
+  background: #f491d4;
+}
+
+.banner__container--img {
+  background: url(https://static.promodescuentos.com/pepperpdimages/threads/thread_full_screen/default/603337_1.jpg);
+  background-size: cover;
+  width: calc(100% + 5px);
+  height: 250px;
+  position: relative;
+  left: -5px;
+  float: left;
+}
