@@ -61,7 +61,7 @@ const Home = ({ cards, promos, user }) => {
         </Categories>
       )}
 
-<KommunicateChat></KommunicateChat>
+    <KommunicateChat></KommunicateChat>
   
     </div>
   );
