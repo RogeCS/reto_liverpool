@@ -53,6 +53,7 @@ const Home = ({ cards, seguros }) => {
   return (
     <div className="Home">
       <Banner />
+      <div className="disclaimer">Página para propósito educativo</div>
       {dept.map((dep) => (
         <Categories
           key={dep}

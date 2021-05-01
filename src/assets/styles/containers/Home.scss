@@ -43,3 +43,13 @@
   margin: auto;
   width: 30px;
 }
+
+.disclaimer {
+  background: rgba(0, 0, 0, 0.6);
+  font-size: 3rem;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  text-align: center;
+  color: white;
+}
