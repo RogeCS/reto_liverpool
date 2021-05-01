@@ -5,10 +5,10 @@ A Liverpool Hackathon (Quantum HackMX 2021) challenge in which we wanted to crea
 Link: https://rogecs.github.io/reto_liverpool/
 
 ### Project Screen Shots
-![](showcase/shwocaseimage1)
-![](showcase/shwocaseimage2)
-![](showcase/shwocaseimage3)
-![](showcase/shwocaseimage4)
+![](showcase/shwocaseimage1.png)
+![](showcase/shwocaseimage2.png)
+![](showcase/shwocaseimage3.png)
+![](showcase/shwocaseimage4.png)
 
 ### Installation and Setup Instructions
 Clone down this repository. You will need node and npm installed globally on your machine. And being inside of the project folder in your terminal.
