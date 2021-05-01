@@ -1,9 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "../containers/Home.jsx";
-import Login from "../containers/Login.jsx";
 import Layout from "../components/Layout.jsx";
-import NotFound from "../containers/NotFound.jsx";
 
 import "../assets/styles/App.scss";
 
