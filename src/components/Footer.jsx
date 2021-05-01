@@ -11,11 +11,8 @@ const Footer = () => (
       <Link to="/">Ventas por teléfono</Link>
     </section>
     <div className="footer__decoration--low">
-      <p>
-        Precio en rojo aplica el descuento más alto, las promociones pueden
-        diferir de las publicadas en tienda
-      </p>
-      <p>2021 Liverpool / Todos los derechos reservados D.R. ®</p>
+      <p>Este es un texto de prueba para ver el uso de nuestro footer</p>
+      <p>Reto Liverpool</p>
     </div>
   </footer>
 );
