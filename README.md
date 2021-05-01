@@ -33,7 +33,7 @@ After all we learned a lot about React, firestore, git, and Github during this p
 The technologies implemented in this project are React, React-Router, Redux, Dialogflow, Kommunicate, Firebase, JavaScript and CSS. We choose to create an app from scratch and using webpack to complie JavaScript modules. About the deployment aspect, we used Github pages integrated with travis-ci.org to show our website on the internet.
 
 ### Project Screen Shots
-<img src="showcase/shwocaseimage1.png" height="100">
+<img src="showcase/shwocaseimage1.png" height="500"/>
 ![](showcase/shwocaseimage2.png)
 ![](showcase/shwocaseimage3.png)
 ![](showcase/shwocaseimage4.png)
