@@ -4,7 +4,7 @@ A Liverpool Hackathon (Quantum HackMX 2021) challenge in which we wanted to crea
 
 Link: https://rogecs.github.io/reto_liverpool/
 
-<img src="showcase/shwocase2.png" height="500"/>
+<img src="showcase/showcase2.png" height="500"/>
 
 ### Installation and Setup Instructions
 Clone down this repository. You will need node and npm installed globally on your machine. And being inside of the project folder in your terminal.
@@ -35,8 +35,8 @@ After all, we learned a lot about React, firestore, git, and Github during this 
 The technologies implemented in this project are React, React-Router, Redux, Dialogflow, Kommunicate, Firebase, JavaScript and CSS. We chose to create an app from scratch and used webpack to complie JavaScript modules. For deployment, we used Github pages and travis-ci.org.
 
 ### More project Screen Shots
-<img src="showcase/shwocase1.png" height="500"/>
-<img src="showcase/shwocase3.png" height="500"/>
-<img src="showcase/shwocase4.png" height="500"/>
+<img src="showcase/showcase1.png" height="500"/>
+<img src="showcase/showcase3.png" height="500"/>
+<img src="showcase/showcase4.png" height="500"/>
 
 
