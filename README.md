@@ -22,7 +22,7 @@ Clone down this repository. You will need node and npm installed globally on you
 `npm run build`
 
 **To visit the development environment:**
-httpslocalhost:8080/
+localhost:8080/
 
 ### Reflection
 
