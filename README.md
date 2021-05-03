@@ -1,6 +1,6 @@
 
 ## A QR for Liverpool
-A Liverpool Hackathon (Quantum HackMX 2021) challenge in which we wanted to create a web application where the customers could found all the sales offered just by using a QR code ,built with React, Redux, JavaScript, and CSS. Designed **just** for **smartphones**.
+A Liverpool challenge (Quantum HackMX 2021) challenge in which we had to create a web application where customers could find all offered sales, just by using a QR code. It was built with React, Redux, JavaScript, and CSS. Designed **just** for **smartphones**.
 
 Link: https://rogecs.github.io/reto_liverpool/
 
