@@ -32,7 +32,7 @@ One of the main challenges we ran into was the implementation between frontend a
 
 After all, we learned a lot about React, firestore, git, and Github during this projects and now we feel more confident to follow new projects and go into more depth in these technologies.
 
-The technologies implemented in this project are React, React-Router, Redux, Dialogflow, Kommunicate, Firebase, JavaScript and CSS. We chose to create an app from scratch and used webpack to complie JavaScript modules. For deployment, we used Github pages and travis-ci.org.
+The technologies implemented in this project were React, React-Router, Redux, Dialogflow, Kommunicate, Firebase, JavaScript and CSS. We chose to create an app from scratch and used webpack to complie JavaScript modules. For deployment, we used Github pages and travis-ci.org.
 
 ### More project Screen Shots
 <img src="showcase/showcase1.png" height="500"/>
